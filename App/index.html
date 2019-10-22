@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"></meta>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.0.1/build/ol.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://astrowebmaps.wr.usgs.gov/webmapatlas/Layers/maps.js"></script>
+    <script src="js/openlayers/v6.0.1-dist/ol.js"></script>
+    <script src="js/planetary/planetaryFunctions.js"></script>
+    <script src="js/planetary/planetaryMap.js"></script>
+    <style>
+      .map {
+        height: 800px;
+        width: 100%;
+      }
+    </style>
+    <title>OpenLayers V6.0.1 w/ Custom Baselayer</title>
+  </head>
+  <body>
+    <h2>OpenLayers V6.0.1 w/ Custom Baselayer</h2>
+    <div id="map" class="map"></div>
+
+    <script>
+      var planetaryMap = new PlanetaryMap({
+        target: 'map',
+        layers: baseLayers,
+          view: new ol.View({
+            //extent: extent,
+            projection: projection,
+            center: ol.proj.fromLonLat([37.41, 8.82]),
+            zoom: 4
+          })
+        });
+        planetaryMap.init();
+    </script>
+  </body>
+</html>
