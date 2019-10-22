@@ -20,19 +20,7 @@
   <body>
     <h2>OpenLayers V6.0.1 w/ Custom Baselayer</h2>
     <div id="map" class="map"></div>
-
-    <script>
-      var planetaryMap = new PlanetaryMap({
-        target: 'map',
-        layers: baseLayers,
-          view: new ol.View({
-            //extent: extent,
-            projection: projection,
-            center: ol.proj.fromLonLat([37.41, 8.82]),
-            zoom: 4
-          })
-        });
-        planetaryMap.init();
-    </script>
+    
+    <script src="js/planetary/mapInstance.js"></script>
   </body>
 </html>
